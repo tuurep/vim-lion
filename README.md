@@ -74,9 +74,11 @@ Options
 Option |                Description |                      Default
 --- | --- | ---
 `g:lion_create_maps`    | Whether to create mappings       | `1`
-`b:lion_squeeze_spaces`<br>`g:lion_squeeze_spaces` | Squeeze extra spaces             | `0`
+`b:lion_squeeze_spaces`<br>`g:lion_squeeze_spaces` | Squeeze extra spaces | `0`
 `g:lion_map_right`      | Mapping for right-align operator | `gl`
 `g:lion_map_left`       | Mapping for left-align operator  | `gL`
+`g:lion_prompt`         | Pattern prompt text              | `Pattern [/]: `
+`g:lion_prompt_map`     | Mapping for pattern prompt       | `/`
 
 If you set: `let b:lion_squeeze_spaces = 1`, and hit `glip=`, you will turn
 

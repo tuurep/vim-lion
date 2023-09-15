@@ -5,6 +5,7 @@
 let s:count = 1
 
 let s:lion_prompt = get(g:, 'lion_prompt', 'Pattern [/]: ')
+let s:lion_prompt_map = get(g:, 'lion_prompt_map', '/')
 
 function! s:command(func, ...)
 	let s:count = v:count
@@ -48,7 +49,7 @@ function! s:align(mode, type, vis, align_char)
 				endif
 			endif
 		endif
-		if align_pattern ==# '/'
+		if keytrans(align_pattern) ==# s:lion_prompt_map
 			let align_pattern .= input(s:lion_prompt)
 		elseif align_pattern ==# ' '
 			let align_pattern = '/\S\zs\s'
@@ -123,7 +124,7 @@ function! s:align(mode, type, vis, align_char)
 			let iteration += 1
 		endwhile
 
-		if align_pattern[0] ==# '/'
+		if match(keytrans(align_pattern), s:lion_prompt_map) == 0
 			silent! call repeat#set("\<Plug>LionRepeat".align_pattern."\<CR>")
 		else
 			silent! call repeat#set("\<Plug>LionRepeat".align_pattern)

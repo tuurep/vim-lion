@@ -58,6 +58,13 @@ Mappings can be configured with the following options:
   g:lion_map_right        Mapping for right-align operator   gl
   g:lion_map_left         Mapping for left-align operator    gL
 
+These options can be set to change the "/" prompt's text and keymap:
+
+  Option               Description                        Default ~
+
+  g:lion_prompt        Pattern prompt text on cmdline     "Pattern [/]: "
+  g:lion_prompt_map    Keymap to prompt for pattern       /
+
 ISSUES AND TODO                                 *lion-issues* *lion-todo*
 
 See https://github.com/tommcdo/vim-lion/issues for bugs and issues.
